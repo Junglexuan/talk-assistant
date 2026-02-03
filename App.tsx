@@ -1338,6 +1338,7 @@ const App: React.FC = () => {
                   if (currentView !== View.HOME) {
                     setNavDirection('backward');
                     setCurrentView(View.HOME);
+                    setViewStack([View.HOME]);
                   }
                 }}
               >
@@ -1368,6 +1369,7 @@ const App: React.FC = () => {
                   if (currentView !== View.SETTINGS) {
                     setNavDirection('forward');
                     setCurrentView(View.SETTINGS);
+                    setViewStack([View.SETTINGS]);
                   }
                 }}
               >
