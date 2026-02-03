@@ -21,6 +21,8 @@ import UploadTemplatePage from './pages/UploadTemplatePage';
 import TemplateSelectionPage from './pages/TemplateSelectionPage';
 import TemplatePreviewPage from './pages/TemplatePreviewPage';
 import QuestionsListPage from './pages/QuestionsListPage';
+import UserAgreementPage from './pages/UserAgreementPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import SettingsPage from './pages/SettingsPage';
 import MessageCenterPage from './pages/MessageCenterPage';
 
@@ -1284,11 +1286,29 @@ const App: React.FC = () => {
                     setTemplateOrigin(View.SETTINGS);
                     navigateForward(View.MY_TEMPLATES);
                   }}
+                  onNavigateToUserAgreement={() => {
+                      setPreviousView(View.SETTINGS);
+                      navigateForward(View.USER_AGREEMENT);
+                  }}
+                  onNavigateToPrivacyPolicy={() => {
+                      setPreviousView(View.SETTINGS);
+                      navigateForward(View.PRIVACY_POLICY);
+                  }}
                 />
               )}
               {currentView === View.MESSAGE_CENTER && (
                 <MessageCenterPage
                   onBack={() => navigateBackward(View.HOME)}
+                />
+              )}
+              {currentView === View.USER_AGREEMENT && (
+                <UserAgreementPage
+                   onBack={() => navigateBackward(View.SETTINGS)}
+                />
+              )}
+              {currentView === View.PRIVACY_POLICY && (
+                <PrivacyPolicyPage
+                   onBack={() => navigateBackward(View.SETTINGS)}
                 />
               )}
             </motion.div>

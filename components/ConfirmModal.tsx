@@ -9,6 +9,7 @@ interface ConfirmModalProps {
   icon?: React.ReactNode;
   confirmText?: string;
   cancelText?: string;
+  confirmButtonColor?: string;
 }
 
 const ConfirmModal: React.FC<ConfirmModalProps> = ({ 
@@ -19,7 +20,8 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
   onConfirm,
   icon,
   confirmText = '确认',
-  cancelText = '取消'
+  cancelText = '取消',
+  confirmButtonColor
 }) => {
   if (!isOpen) return null;
 
@@ -64,7 +66,7 @@ const ConfirmModal: React.FC<ConfirmModalProps> = ({
             onClick={onConfirm}
             className="flex-1 py-3 text-white text-[15px] font-bold rounded-full shadow-lg shadow-indigo-100 active:scale-95 transition-all"
             style={{
-              background: 'linear-gradient(90deg, #5B4EF8 0%, #6B5EFF 100%)',
+              background: confirmButtonColor || 'linear-gradient(90deg, #5B4EF8 0%, #6B5EFF 100%)',
             }}
           >
             {confirmText}

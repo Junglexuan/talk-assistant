@@ -17,6 +17,8 @@ export enum View {
   HISTORY_DETAIL = 'HISTORY_DETAIL',  // HistoryDetailPage - 历史访谈详情页
   MESSAGE_CENTER = 'MESSAGE_CENTER',  // MessageCenterPage - 消息中心页
   REPORT_PREVIEW = 'REPORT_PREVIEW',  // ReportPreviewPage - 报告预览页
+  USER_AGREEMENT = 'USER_AGREEMENT',  // UserAgreementPage - 用户协议页
+  PRIVACY_POLICY = 'PRIVACY_POLICY',  // PrivacyPolicyPage - 隐私政策页
 }
 
 // 尽调状态枚举
